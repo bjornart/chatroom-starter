@@ -25,6 +25,7 @@ public class WebSocketChatServer {
 
     private static void sendMessageToAll(String msg) {
         //TODO: add send message method.
+        //for each online sessoin - send message in json format session.sendMessage (message.toJson())
     }
 
     /**
@@ -33,6 +34,11 @@ public class WebSocketChatServer {
     @OnOpen
     public void onOpen(Session session) {
         //TODO: add on open connection.
+        onlineSessions.put(session);
+        Message message = new Message(onlineSessions.size());
+        sendMessageToAll(message);
+
+
     }
 
     /**
@@ -41,6 +47,8 @@ public class WebSocketChatServer {
     @OnMessage
     public void onMessage(Session session, String jsonStr) {
         //TODO: add send message.
+        //Create new Message object from jsonStr and Message model
+        //sendMessageToAll (message);
     }
 
     /**
@@ -49,6 +57,9 @@ public class WebSocketChatServer {
     @OnClose
     public void onClose(Session session) {
         //TODO: add close connection.
+        onlineSessions.remove(session);
+        //construct a new Message containing the onlineSessions size
+        //sendMessageToAll (message)
     }
 
     /**

@@ -8,21 +8,46 @@ public class Message {
     private String username;
     private String message;
     private String type;
+    private String onlineCount;
 
-    public Message (){
+
         //define other constructors
         //define getters and setters
-public String getUsername() {
-    return username;
-        }
-
-
-        public void setUsername (String newUsername) {
-    this.username = newUsername;
-         }
-
-
-
+    public String getUsername() {
+        return this.username;
     }
+
+    public void setUsername (String newUsername) {
+        this.username = newUsername;
+    }
+
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    public void setMessage (String message) {
+        this.message = message;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType (String type) {
+        this.type = type;
+    }
+
+
+    public String getOnlineCount() {
+        return this.onlineCount;
+    }
+
+    public void setOnlineCount (String onlineCount) {
+        this.onlineCount = onlineCount;
+    }
+
 }
+
+
 
